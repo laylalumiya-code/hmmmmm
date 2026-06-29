@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>hmmmmm</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    position:relative;
+    font-family:'Pacifico', cursive;
+    background:linear-gradient(135deg,#ffb6c1,#ffd6e7);
+}
+
+/* ================= SAKURA ================= */
+
+.lily{
+    position:absolute;
+    top:-50px;
+    font-size:30px;
+    opacity:0.8;
+    animation:jatuh linear infinite;
+    z-index:1;
+}
+
+@keyframes jatuh{
+
+0%{
+    transform:
+    translateY(-100px)
+    rotate(0deg);
+}
+
+100%{
+    transform:
+    translateY(120vh)
+    rotate(360deg);
+}
+
+}
+
+/* ================= BOX ================= */
+
+.box{
+    width:320px;
+    background:rgba(255,255,255,0.92);
+    padding:40px;
+    border-radius:30px;
+    text-align:center;
+    z-index:10;
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+h1{
+    color:#ff4f81;
+    margin-bottom:20px;
+    font-size:32px;
+}
+
+input{
+    width:90%;
+    padding:12px;
+    border:none;
+    border-radius:15px;
+    background:#f5f5f5;
+    margin-bottom:20px;
+    outline:none;
+    font-size:16px;
+}
+
+button{
+    padding:12px 25px;
+    border:none;
+    border-radius:20px;
+    background:#ff4f81;
+    color:white;
+    cursor:pointer;
+    font-size:18px;
+    transition:0.3s;
+    font-family:'Pacifico', cursive;
+}
+
+button:hover{
+    transform:scale(1.08);
+    background:#ff2e68;
+}
+
+.teks{
+    margin-top:15px;
+    color:#777;
+}
+
+/* ================= TRANSISI ================= */
+
+.transisi2{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+
+    background:
+    linear-gradient(-45deg,
+    #ffb6c1,
+    #ff8fb1,
+    #ffd6e7,
+    #ff69b4);
+
+    background-size:400% 400%;
+    animation:bgGerak 8s ease infinite;
+
+    overflow:hidden;
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:1s;
+    z-index:9999;
+}
+
+.transisi2.show{
+    opacity:1;
+    visibility:visible;
+}
+
+@keyframes bgGerak{
+
+0%{
+    background-position:0% 50%;
+}
+
+50%{
+    background-position:100% 50%;
+}
+
+100%{
+    background-position:0% 50%;
+}
+
+}
+
+/* ================= FOTO KECIL ================= */
+
+.foto{
+    position:absolute;
+
+    width:95px;
+    height:95px;
+
+    object-fit:cover;
+
+    border:none;
+    border-radius:0;
+
+    opacity:0;
+
+    transform:
+    scale(0)
+    rotate(720deg);
+
+    animation:munculAcak 2s forwards;
+}
+
+@keyframes munculAcak{
+
+0%{
+    opacity:0;
+
+    transform:
+    scale(0)
+    rotate(720deg);
+}
+
+100%{
+    opacity:1;
+
+    transform:
+    scale(1)
+    rotate(0deg);
+}
+
+}
+
+/* ================= POSISI FOTO ACAK ================= */
+
+/* ATAS */
+
+.foto1{top:2%; left:4%;}
+.foto2{top:6%; left:18%;}
+.foto3{top:3%; left:32%;}
+.foto4{top:4%; left:68%;}
+.foto5{top:2%; left:82%;}
+
+/* KIRI */
+
+.foto6{top:18%; left:3%;}
+.foto7{top:30%; left:8%;}
+.foto8{top:44%; left:4%;}
+.foto9{top:58%; left:8%;}
+.foto10{top:72%; left:3%;}
+
+/* KANAN */
+
+.foto11{top:18%; left:84%;}
+.foto12{top:30%; left:88%;}
+.foto13{top:44%; left:84%;}
+.foto14{top:58%; left:88%;}
+.foto15{top:72%; left:84%;}
+
+/* BAWAH */
+
+.foto16{top:82%; left:4%;}
+.foto17{top:86%; left:20%;}
+.foto18{top:84%; left:36%;}
+.foto19{top:84%; left:62%;}
+.foto20{top:86%; left:78%;}
+
+/* DEKAT TENGAH */
+
+.foto21{top:16%; left:42%;}
+.foto22{top:16%; left:56%;}
+
+.foto23{top:28%; left:24%;}
+.foto24{top:28%; left:70%;}
+
+.foto25{top:42%; left:18%;}
+.foto26{top:42%; left:76%;}
+
+.foto27{top:58%; left:20%;}
+.foto28{top:58%; left:72%;}
+
+.foto29{top:72%; left:28%;}
+.foto30{top:72%; left:62%;}
+
+/* TAMBAHAN */
+
+.foto31{top:10%; left:10%;}
+.foto32{top:10%; left:76%;}
+
+.foto33{top:24%; left:12%;}
+.foto34{top:24%; left:80%;}
+
+.foto35{top:66%; left:10%;}
+.foto36{top:66%; left:80%;}
+
+.foto37{top:78%; left:14%;}
+.foto38{top:78%; left:74%;}
+
+.foto39{top:8%; left:48%;}
+.foto40{top:8%; left:58%;}
+
+.foto41{top:82%; left:46%;}
+.foto42{top:82%; left:56%;}
+
+.foto43{top:36%; left:10%;}
+.foto44{top:36%; left:82%;}
+
+/* ================= FOTO TENGAH ================= */
+
+.foto-tengah{
+    position:absolute;
+
+    width:320px;
+    height:320px;
+
+    object-fit:cover;
+
+    border-radius:35px;
+
+    border:6px solid white;
+
+    top:50%;
+    left:50%;
+
+    transform:
+    translate(-50%,-50%)
+    scale(0);
+
+    opacity:0;
+
+    transition:1s;
+
+    z-index:99999;
+
+    animation:detak 1.5s infinite;
+
+    box-shadow:
+    0 0 40px white,
+    0 0 80px pink;
+}
+
+.transisi2.show .foto-tengah{
+
+    transform:
+    translate(-50%,-50%)
+    scale(1);
+
+    opacity:1;
+
+}
+
+@keyframes detak{
+
+0%{
+    transform:
+    translate(-50%,-50%)
+    scale(1);
+}
+
+50%{
+    transform:
+    translate(-50%,-50%)
+    scale(1.05);
+}
+
+100%{
+    transform:
+    translate(-50%,-50%)
+    scale(1);
+}
+
+}
+
+/* ================= SPARKLE ================= */
+
+.sparkle{
+    position:absolute;
+    font-size:45px;
+    z-index:999999;
+
+    animation:
+    kelapKelip 2s infinite,
+    muter 6s linear infinite;
+}
+
+.s1{top:10%; left:15%;}
+.s2{top:20%; left:80%;}
+.s3{top:40%; left:10%;}
+.s4{top:65%; left:85%;}
+.s5{top:80%; left:20%;}
+.s6{top:50%; left:75%;}
+
+@keyframes kelapKelip{
+
+0%{
+    opacity:0;
+    transform:scale(0.5);
+}
+
+50%{
+    opacity:1;
+    transform:scale(1.3);
+}
+
+100%{
+    opacity:0;
+    transform:scale(0.5);
+}
+
+}
+
+@keyframes muter{
+
+from{
+    rotate:0deg;
+}
+
+to{
+    rotate:360deg;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- SAKURA -->
+
+<div class="lily" style="left:2%; animation-duration:7s;">🌸</div>
+<div class="lily" style="left:8%; animation-duration:9s;">🌸</div>
+<div class="lily" style="left:14%; animation-duration:6s;">🌸</div>
+<div class="lily" style="left:20%; animation-duration:10s;">🌸</div>
+<div class="lily" style="left:26%; animation-duration:8s;">🌸</div>
+<div class="lily" style="left:32%; animation-duration:11s;">🌸</div>
+<div class="lily" style="left:38%; animation-duration:7s;">🌸</div>
+<div class="lily" style="left:44%; animation-duration:9s;">🌸</div>
+<div class="lily" style="left:50%; animation-duration:6s;">🌸</div>
+<div class="lily" style="left:56%; animation-duration:10s;">🌸</div>
+<div class="lily" style="left:62%; animation-duration:8s;">🌸</div>
+<div class="lily" style="left:68%; animation-duration:11s;">🌸</div>
+<div class="lily" style="left:74%; animation-duration:7s;">🌸</div>
+<div class="lily" style="left:80%; animation-duration:9s;">🌸</div>
+<div class="lily" style="left:86%; animation-duration:6s;">🌸</div>
+<div class="lily" style="left:92%; animation-duration:10s;">🌸</div>
+
+<audio id="gagalSound">
+<source src="salah.mp3" type="audio/mpeg">
+</audio>
+
+<!-- BOX -->
+
+<div class="box">
+
+<h1>haii</h1>
+
+<input type="password" id="pw" placeholder="masukkan password">
+
+<br>
+
+<button onclick="cekPassword()">Masuk</button>
+
+<div class="teks">
+from abybuy
+</div>
+
+</div>
+
+<!-- TRANSISI -->
+
+<div class="transisi2" id="transisi2">
+
+<!-- FOTO KECIL -->
+<img src="lily.png" class="foto foto1">
+<img src="lily.png" class="foto foto2">
+<img src="lily.png" class="foto foto3">
+<img src="lily.png" class="foto foto4">
+<img src="lily.png" class="foto foto5">
+<img src="lily.png" class="foto foto6">
+<img src="lily.png" class="foto foto7">
+<img src="lily.png" class="foto foto8">
+<img src="lily.png" class="foto foto9">
+<img src="lily.png" class="foto foto10">
+<img src="lily.png" class="foto foto11">
+<img src="lily.png" class="foto foto12">
+<img src="lily.png" class="foto foto13">
+<img src="lily.png" class="foto foto14">
+<img src="lily.png" class="foto foto15">
+<img src="lily.png" class="foto foto16">
+<img src="lily.png" class="foto foto17">
+<img src="lily.png" class="foto foto18">
+<img src="lily.png" class="foto foto19">
+<img src="lily.png" class="foto foto20">
+<img src="lily.png" class="foto foto21">
+<img src="lily.png" class="foto foto22">
+<img src="lily.png" class="foto foto23">
+<img src="lily.png" class="foto foto24">
+<img src="lily.png" class="foto foto25">
+<img src="lily.png" class="foto foto26">
+<img src="lily.png" class="foto foto27">
+<img src="lily.png" class="foto foto28">
+<img src="lily.png" class="foto foto29">
+<img src="lily.png" class="foto foto30">
+<img src="lily.png" class="foto foto31">
+<img src="lily.png" class="foto foto32">
+<img src="lily.png" class="foto foto33">
+<img src="lily.png" class="foto foto34">
+<img src="lily.png" class="foto foto35">
+<img src="lily.png" class="foto foto36">
+<img src="lily.png" class="foto foto37">
+<img src="lily.png" class="foto foto38">
+<img src="lily.png" class="foto foto39">
+<img src="lily.png" class="foto foto40">
+<img src="lily.png" class="foto foto41">
+<img src="lily.png" class="foto foto42">
+<img src="lily.png" class="foto foto43">
+<img src="lily.png" class="foto foto44">
+
+<!-- FOTO TENGAH -->
+<img src="t d.jpg" class="foto-tengah">
+
+<!-- SPARKLE -->
+<div class="sparkle s1">✨</div>
+<div class="sparkle s2">💖</div>
+<div class="sparkle s3">✨</div>
+<div class="sparkle s4">💫</div>
+<div class="sparkle s5">✨</div>
+<div class="sparkle s6">🌸</div>
+
+</div>
+
+<script>
+
+function cekPassword(){
+
+    var password =
+    document.getElementById("pw").value;
+
+    if(password == "prinses cantik 123"){
+
+        document
+        .getElementById("transisi2")
+        .classList.add("show");
+
+        setTimeout(function(){
+
+            window.location.href =
+            "HBD1.html";
+
+        },5000);
+
+    }
+
+    else{
+
+        document
+        .getElementById("gagalSound")
+        .play();
+
+        alert("verifikasi gagal 😜");
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
